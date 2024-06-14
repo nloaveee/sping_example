@@ -12,9 +12,9 @@ public class ReviewBO {
 	@Autowired
 	private ReviewMapper reviewMapper;
 
-	// input: x
+	// input: id(int)
 	// output: Review(단건) or null
-	public Review getReview() {
-		return reviewMapper.selectReview();
+	public Review getReviewById(int id) {
+		return reviewMapper.selectReviewById(id);
 	}
 }

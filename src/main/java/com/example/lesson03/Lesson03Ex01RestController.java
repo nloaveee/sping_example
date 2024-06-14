@@ -16,8 +16,18 @@ public class Lesson03Ex01RestController {
 
 	// http://localhost/lesson03/ex01?id=7
 	@RequestMapping("lesson03/ex01")
-	public Review ex01(@RequestParam(value = "id") int id // 필수 파라미터 value= 받아올 변수명을 작성, 받아온 변수명도 작성
+	public Review ex01(
+			@RequestParam("id") int id // 필수 파라미터 
+			// @RequestParam(value = "id") int id // 필수 파라미터 value= 받아올 변수명을 작성, 받아온 변수명도 작성
+			// @RequestParam(value = "id", required = true) int id // 필수 파라미터 required: 필수
+			// 파라미터이면 true
+			// @RequestParam(value = "id", required = false) Integer id // 비필수 파라미터 int 사용 x
+			//@RequestParam(value = "id", defaultValue = "1") int id  비필수 파라미터 + 기본값 1
+
 	) {
-		return reviewBO.getReview(); // response JSON String
+//		if(id==null) {
+//			id=1;
+//		}
+		return reviewBO.getReviewById(id); // response JSON String
 	}
 }

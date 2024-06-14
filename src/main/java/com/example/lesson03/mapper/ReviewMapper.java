@@ -7,7 +7,7 @@ import com.example.lesson03.domain.Review;
 @Mapper
 public interface ReviewMapper {
 
-	// input: x
+	// input: id
 	// output: Review or null
-	public Review selectReview();
+	public Review selectReviewById(int id);
 }
