@@ -41,4 +41,14 @@
 		ORDER BY `id` DESC
 		LIMIT 1
 	</select>
+	
+	<!-- 0: false, 0이 아닌 수: true -->
+	<select id="isDuplicationByName" parameterType="string" resultType="boolean">
+		SELECT
+			COUNT(*)
+		FROM
+			`new_user`
+		WHERE
+			`name` = #{name}		
+	</select>
 </mapper>
